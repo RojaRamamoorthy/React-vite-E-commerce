@@ -8,6 +8,8 @@ function OrderConfirmation() {
         return <div>No order found.</div>;
     }
 
+    const totalPrice = orderDetails.price * orderDetails.quantity;
+
     return (
         <div className="order-confirmation">
             <h1>Order Confirmation</h1>
@@ -17,7 +19,7 @@ function OrderConfirmation() {
                 <div className="title">{orderDetails.title}</div>
                 <div className="price">${orderDetails.price.toFixed(2)}</div>
                 <div className="quantity">Quantity: {orderDetails.quantity}</div>
-                <div className="total-price">Total: ${(orderDetails.price * orderDetails.quantity).toFixed(2)}</div>
+                <div className="total-price">Total: ${totalPrice.toFixed(2)}</div>
             </div>
         </div>
     );

@@ -1,3 +1,5 @@
+// CartItem.jsx
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { itemsDeleted, quantityAdded, quantityRemoved, orderPlaced } from '../reducers/cartSlice';
@@ -25,7 +27,7 @@ function CartItem(props) {
     function handleOrder() {
         dispatch(orderPlaced(id));
         toast.success(title + " item(s) ordered successfully");
-        navigate('/order-confirmation');
+        navigate('/orders'); // Redirect to orders page after placing order
     }
 
     const totalPrice = price * quantity;

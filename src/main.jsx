@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import { createRoot } from 'react-dom/client'; // Correct import
+import App from './App';
 import './index.css';
-import { store } from './store.js';
+import { store } from './store';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import Products from './components/Products.jsx';
-import Cart from './components/Cart.jsx';
-import OrderConfirmation from './components/OrderConfirmation.jsx'; // Import the new component
-import OrderHistory from './components/OrderHistory.jsx';
-ReactDOM.createRoot(document.getElementById('root')).render(
+import Home from './components/Home';
+import About from './components/About';
+import Products from './components/Products';
+import Cart from './components/Cart';
+import OrderConfirmation from './components/OrderConfirmation';
+import OrderHistory from './components/OrderHistory';
+
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -21,11 +22,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='about' element={<About />} />
             <Route path='cart' element={<Cart />} />
             <Route path='product' element={<Products />} />
-            <Route path='order-confirmation' element={<OrderConfirmation />} /> {/* Add the route */}
-            <Route path='/orders' element={<OrderHistory />} />
+            <Route path='order-confirmation' element={<OrderConfirmation />} />
+            <Route path='orders' element={<OrderHistory />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

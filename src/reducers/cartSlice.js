@@ -3,15 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        items: []
+        items: [],
+        orders: [], // Array to store confirmed orders
+        orderDetails: null // Object to store details of the last placed order
     },
     reducers: {
         itemsAdded: (state, action) => {
             const addedItem = state.items.find((x) => x.id === action.payload.id);
             if (addedItem) {
                 addedItem.quantity += 1;
-            } 
-            else {
+            } else {
                 state.items.push({ ...action.payload, quantity: 1 });
             }
         },
@@ -31,11 +32,15 @@ const cartSlice = createSlice({
             }
         },
         orderPlaced: (state, action) => {
-            state.orderDetails = state.items.find((x) => x.id === action.payload);
-            state.items = state.items.filter((x) => x.id !== action.payload);
+            const orderedItem = state.items.find((x) => x.id === action.payload);
+            if (orderedItem) {
+                state.orders.push({ ...orderedItem, quantity: orderedItem.quantity });
+                state.orderDetails = { ...orderedItem, quantity: orderedItem.quantity };
+                state.items = state.items.filter((x) => x.id !== action.payload);
+            }
         }
     }
 });
 
-export const { itemsAdded, itemsDeleted, quantityAdded, quantityRemoved,orderPlaced } = cartSlice.actions;
+export const { itemsAdded, itemsDeleted, quantityAdded, quantityRemoved, orderPlaced } = cartSlice.actions;
 export default cartSlice.reducer;

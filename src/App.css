@@ -100,15 +100,13 @@ body.Dark .add-cart {
    flex-direction: column;
    padding: 20px;
    margin: 30px;
-   /* flex-wrap: nowrap; */
 }
 
-.product-card>div {
+.product-card > div {
    display: flex;
-   /* justify-content: space-evenly; */
 }
 
-.product-card>img {
+.product-card > img {
    width: 250px;
    height: 250px;
    margin-bottom: 20px;
@@ -137,6 +135,59 @@ body.Dark .add-cart {
    gap: 10px;
    margin: 10px;
 }
+
+/* Specific Styling */
+
+.topbar {
+   margin-bottom: 20px;
+}
+
+.topbar select {
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: #54a0ff;
+   color: white;
+   margin-left: 1300px;
+   transition: border-color 0.3s ease;
+}
+
+select:focus {
+   outline: none;
+   border-color: #54a0ff; /* Soft blue outline on focus */
+}
+
+input[type="text"] {
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   margin-right: 10px;
+   transition: border-color 0.3s ease;
+  
+}
+
+ input[type="text"]:focus {
+   outline: none;
+   border-color: #54a0ff; /* Soft blue outline on focus */
+}
+
+ button {
+   background-color: #54a0ff; /* Soft blue button */
+   color: #ffffff; /* White text */
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+   background-color: #4275e6; /* Darker blue on hover */
+}
+
 
 .cart-item {
    display: flex;
@@ -370,3 +421,177 @@ body.Dark .add-cart {
    font-weight: bold;
    color: #333;
 }
+.home {
+   text-align: center;
+   padding: 20px;
+}
+
+.home h1 {
+   font-size: 2.5rem;
+   color: #87ceeb; /* Pastel Sky Blue */
+   margin-bottom: 20px;
+}
+
+
+.home-image {
+   max-width: 100%;
+   height: auto;
+   margin-top: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.about-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+}
+
+.about {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h1 {
+   font-size: 2.5rem;
+   color: #e11682e6;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.about-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+}
+
+.about-text {
+   flex: 1;
+   font-size: 1.2rem;
+   color: #191970;
+   line-height: 1.6;
+}
+
+.site-image img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials {
+   padding: 20px;
+   /* background-color: #fef1f1; */
+   text-align: center;
+}
+.testimonials h2{
+   color: #000080;
+}
+.testimonial-list {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   margin-top: 20px;
+}
+
+.testimonial {
+   max-width: 400px;
+   padding: 20px;
+   background-color: #e6d5d5;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   margin: 0 auto 10px;
+   display: block;
+}
+
+.text {
+   font-size: 14px;
+   margin-bottom: 10px;
+}
+
+.name {
+   font-weight: bold;
+   font-size: 16px;
+   color: #333;
+}
+.order-history {
+   max-width: 800px;
+   margin: 20px auto;
+   padding: 20px;
+   border: 2px solid #ccc;
+   border-radius: 10px;
+   background-color: #fff;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-history h1 {
+   font-size: 24px;
+   font-weight: bold;
+   color: #333;
+   margin-bottom: 20px;
+}
+
+.order-item {
+   border-bottom: 1px solid #eee;
+   padding: 15px;
+   transition: background-color 0.3s ease;
+}
+
+.order-item:hover {
+   background-color: #f9f9f9;
+}
+
+.order-item a {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   text-decoration: none;
+   color: #333;
+}
+
+.order-item img {
+   height: 60px;
+}
+
+.order-item .title {
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.order-item .price {
+   font-size: 16px;
+   color: #777;
+}
+
+.order-item .quantity {
+   font-size: 16px;
+   color: #777;
+}
+
+.order-item .total-price {
+   font-size: 18px;
+   font-weight: bold;
+   color: #333;
+}
+
+.no-orders {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 20px;
+   font-size: 1.5rem;
+   color: #555;
+}
+
+
+
+
+

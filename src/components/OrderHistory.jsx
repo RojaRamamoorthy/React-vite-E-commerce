@@ -1,12 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import '../App.css'
 function OrderHistory() {
-    const orders = useSelector((state) => state.orders); // Assuming orders are stored in Redux state
-
+    const orders = useSelector((state) => state.cart.orders); 
     if (orders.length === 0) {
-        return <div>No orders found.</div>;
+        return (
+            <div className="order-history">
+                <h1>Order History</h1>
+                <div className="no-orders">
+                  
+                    <div className="message">No orders found.</div>
+                </div>
+            </div>
+        );
     }
 
     return (
